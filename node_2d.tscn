@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://5b6ja6fu8r02"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Button" type="Button" parent="."]
+offset_left = 502.0
+offset_top = 279.0
+offset_right = 636.0
+offset_bottom = 339.0
+text = "don't press"
