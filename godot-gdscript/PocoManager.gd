@@ -22,6 +22,8 @@ var dispatcher = {
 	'test' :  func(arg1:String, arg2:String): return 'test arg1:' +arg1 +' arg2:' + arg2
 }
 
+signal receive_msg(client_index:int)
+
 func _ready() -> void:
 	init_server()
 
@@ -40,11 +42,15 @@ func init_server() -> void:
 func server_loop() -> void:
 	var sock:StreamPeerTCP = _server.take_connection()
 	if sock:
-		var new_client = PocoClient.new(sock,true)
+		var new_client = PocoClient.new(sock,clients.size(),true)
+		print('[poco] new client accepted')
 		clients.append(new_client)
-		var s = sock.get_utf8_string()
-		print(s)
-		clients[0].send(test(s))
+	if clients:
+		if clients[0].receive():
+			print('确有收货')
+		# var s = sock.get_utf8_string()
+		# print(s)
+		# clients[0].send(test(s))
 
 func onRequest(req:Dictionary):
 	var client:String = req.client
