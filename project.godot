@@ -9,13 +9,91 @@
 config_version=5
 
 _global_script_classes=[{
+"base": "IDumper",
+"class": &"AbstractDumper",
+"language": &"GDScript",
+"path": "res://Poco/sdk/AbstractDumper.gd"
+}, {
+"base": "Node",
+"class": &"AbstractNode",
+"language": &"GDScript",
+"path": "res://Poco/sdk/AbstractNode.gd"
+}, {
+"base": "Object",
+"class": &"Attributor",
+"language": &"GDScript",
+"path": "res://Poco/sdk/Attributor.gd"
+}, {
+"base": "IMatcher",
+"class": &"DefaultMatcher",
+"language": &"GDScript",
+"path": "res://Poco/sdk/DefaultMatcher/DefaultMatcher.gd"
+}, {
+"base": "AbstractDumper",
+"class": &"Dumper",
+"language": &"GDScript",
+"path": "res://Poco/Dumper.gd"
+}, {
+"base": "Object",
+"class": &"EqualizationComparator",
+"language": &"GDScript",
+"path": "res://Poco/sdk/DefaultMatcher/EqualizationComparator.gd"
+}, {
+"base": "Node",
+"class": &"ForzenNode",
+"language": &"GDScript",
+"path": "res://Poco/FrozenNode.gd"
+}, {
+"base": "AbstractDumper",
+"class": &"FrozenDumper",
+"language": &"GDScript",
+"path": "res://Poco/FrozenDumper.gd"
+}, {
+"base": "AbstractNode",
+"class": &"GDNode",
+"language": &"GDScript",
+"path": "res://Poco/GodotNode.gd"
+}, {
+"base": "Node",
+"class": &"IDumper",
+"language": &"GDScript",
+"path": "res://Poco/sdk/IDumper.gd"
+}, {
+"base": "Object",
+"class": &"IMatcher",
+"language": &"GDScript",
+"path": "res://Poco/sdk/DefaultMatcher/IMatcher.gd"
+}, {
 "base": "Node",
 "class": &"PocoClient",
 "language": &"GDScript",
 "path": "res://Poco/ClientConnection.gd"
+}, {
+"base": "Object",
+"class": &"RegexpComparator",
+"language": &"GDScript",
+"path": "res://Poco/sdk/DefaultMatcher/RegexpComparator.gd"
+}, {
+"base": "Object",
+"class": &"Selector",
+"language": &"GDScript",
+"path": "res://Poco/sdk/Selector.gd"
 }]
 _global_script_class_icons={
-"PocoClient": ""
+"AbstractDumper": "",
+"AbstractNode": "",
+"Attributor": "",
+"DefaultMatcher": "",
+"Dumper": "",
+"EqualizationComparator": "",
+"ForzenNode": "",
+"FrozenDumper": "",
+"GDNode": "",
+"IDumper": "",
+"IMatcher": "",
+"PocoClient": "",
+"RegexpComparator": "",
+"Selector": ""
 }
 
 [application]

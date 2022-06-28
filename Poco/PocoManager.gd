@@ -2,6 +2,9 @@ extends Node
 
 const VERSION:String = '0.0.1'
 var port:int = 5001
+@onready 
+var dumper = Dumper.new()
+
 
 var _server:TCPServer = null
 # var server:AsyncTcpServer = null
@@ -15,7 +18,7 @@ var clients:Array[PocoClient] = []
 
 var dispatcher = {
 	'GetSDKVersion' : func(): return VERSION,
-	'Dump' : test,
+	'Dump' : func(onlyVisibleNode:bool): return dumper.dumpHierarchy(onlyVisibleNode),
 	# 'Screenshot' : 
 	# 'dispatcher':
 	# "SetText":
@@ -76,7 +79,7 @@ func onRequest(client,req:Dictionary):
 	# if not function:
 	# 	# ret['error'] = {message : 'No such rpc method '+ method , reqid: %s, client:%s' % (method, req.id, req.client)}
 	# 	ret['error'] = {message : 'No such rpc method ' + method}
-	var res = function.call(params)
+	var res = function.call(params[0])
 	# print(res)
 	ret['result'] = res
 	client.send(ret)
